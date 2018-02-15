@@ -25,7 +25,7 @@
     <input type="radio" name="answers[1]" value="D">
     Él
   </label>
-  <button id="quiz-submit">Submit</button>
+  <button id="submit-first">Submit</button>
 </div>
 
 <div class="question">
@@ -39,7 +39,7 @@
     <input type="radio" name="answers[2]" value="B">
     Before the noun
   </label>
-  <button id="quiz-submit">Submit</button>
+  <button id="submit-second">Submit</button>
 </div>
 
 <div class="question">
@@ -58,7 +58,7 @@
     <input type="radio" name="answers[3]" value="C" data-correct>
     El diez de marzo del dos mil
   </label>
-  <button id="quiz-submit">Submit</button>
+  <button id="submit-third">Submit</button>
 </div>
 
 <div class="question">
@@ -77,7 +77,7 @@
     <input type="radio" name="answers[4]" value="C">
     Veinte más cinco son cien
   </label>
-  <button id="quiz-submit">Submit</button>
+  <button id="submit-fourth">Submit</button>
 </div>
 
 <div class="question">
@@ -96,7 +96,7 @@
     <input type="radio" name="answers[5]" value="B">
     Tú eres
   </label>
-  <button id="quiz-submit">Submit</button>
+  <button id="submit-fifth">Submit</button>
 </div>
 
 <div class="question">
@@ -115,7 +115,7 @@
     <input type="radio" name="answers[6]" value="C">
     Vosotras sois
   </label>
-  <button id="quiz-submit">Submit</button>
+  <button id="submit-sixth">Submit</button>
 </div>
 
 
@@ -153,11 +153,17 @@ body {
 <script>
 $(document).ready(function(){
   
-  $('#quiz-submit').on('click', function(){
+  //Submit buttons
+    $('#submit-first').on('click', function(){
+    $('#submit-second').on('click', function(){
+    $('#submit-third').on('click', function(){
+    $('#submit-fourth').on('click', function(){
+    $('#submit-fifth').on('click', function(){
+    $('#submit-sixth').on('click', function(){
+    
     //alert("yo");
     var score = 0;
-    
-    // Loop through each question
+      // Loop through each question
     $('.question').each(function(){
       // hide quiz msg
       $('.quiz-msg', this).remove();
