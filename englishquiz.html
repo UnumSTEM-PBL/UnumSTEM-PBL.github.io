@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en_US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Run-ons and Splices</title>
+</head>
+<body>
+  <div class="question">
+    <p>1. What makes a complete sentence?</p>
+    <label>
+      <input type="radio" name="answers[1]" value="A">
+      Subject
+    </label>
+   
+    <label>
+      <input type="radio" name="answers[1]" value="B" data-correct>
+      Subject, verb, and complete thought
+    </label>
+    
+    <label>
+      <input type="radio" name="answers[1]" value="C">
+      Complete thought
+    </label>
+    
+    <label>
+      <input type="radio" name="answers[1]" value="D">
+      Subject and verb
+    </label>
+  </div>
+  
+  <div class="question">
+    <p>2. Which of these is a complete sentence?</p>
+    <label>
+      <input type="radio" name="answers[2]" value="A" data-correct>
+      Mrs. Glenda makes good food.
+    </label>
+    
+    <label>
+      <input type="radio" name="answers[2]" value="B">
+      Hello.
+    </label>
+   
+    <label>
+      <input type="radio" name="answers[2]" value="C">
+      Mrs. Glenda makes good food
+    </label>
+    
+    <label>
+      <input type="radio" name="answers[2]" value="D">
+      Brownies!
+    </label>
+  </div>
+  
+  <div class="question">
+    <p>3. Which of these is a comma splice?</p>
+    <label>
+      <input type="radio" name="answers[3]" value="A">
+      Hey, how're you doing?
+    </label>
+    
+    <label>
+      <input type="radio" name="answers[3]" value="B">
+      We're going to the store,
+    </label>
+    
+    <label>
+      <input type="radio" name="answers[3]" value="C" data-correct>
+      We're going to are store, are you going to make breakfast?
+    </label>
+  </div>
+  
+  <div class="question">
+    <p>4. Which of these uses colons and semicolons correctly?</p>
+    <label>
+      <input type="radio" name="answers[4]" value="A">
+      Mom went to work: she wanted me to get a few things at the grocery store.
+    </label>
+    
+    <label>
+      <input type="radio" name="answers[4]" value="B">
+      I made a list for things I need to get at the grocery store; milk, eggs, pickles, and chocolate chips.
+    </label>
+    
+    <label>
+      <input type="radio" name="answers[4]" value="C">
+      Mom went to work: she left me a list for the grocery store; milk, eggs, pickles, and chocolate chips.
+    </label>
+    
+    <label>
+      <input type="radio" name="answers[4]" value="D" data-correct>
+      Mom went to work; she left me a list for the grocery store: milk, eggs, pickles, and chocolate chips.
+    </label>
+  </div>
+  
+  <div class="question">
+    <p>5. Is this sentence correct according to subject-verb agreement? “She cooks steak on the grill.”</p>
+    <label>
+      <input type="radio" name="answers[5]" value="A" data-correct>
+      Yes
+    </label>
+    
+    <label>
+      <input type="radio" name="answers[5]" value="B">
+      No
+    </label>
+  </div>
+  
+  <div class="question">
+    <p>6. Which sentence is correct according to subject-verb agreement?</p>
+    <label>
+      <input type="radio" name="answers[6]" value="A">
+      The reporters interviews the man.
+    </label>
+    
+    <label>
+      <input type="radio" name="answers[6]" value="B" data-correct>
+      The reporters interview the man.
+    </label>
+    
+    <label>
+      <input type="radio" name="answers[6]" value="C">
+      The reporter interview the man.
+    </label>
+    
+    <label>
+      <input type="radio" name="answers[6]" value="D">
+      The reporter eat the food.
+    </label>
+  </div>
+    <button id="quiz-submit">Submit</button>
+    
+    
+  <div>
+    Score: <span id="score">0</span>
+  </div>
+  
+  <style>
+    body {
+  font-size: 18px;
+  font-family: sans-serif;
+}
+.question {
+  padding: 1em;
+  background: #eee;
+  margin-bottom: 1em;
+}
+.quiz-msg {
+  padding: 0.5em;
+  margin-top: 1em;
+}
+.quiz-msg.correct {
+  background: #e8ffc6;
+}
+.quiz-msg.incorrect {
+  background: #ffe5cc;
+}
+.correct {
+background: green;
+padding: 0.2em;
+}
+  </style>
+  
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+    <script>
+$(document).ready(function(){
+    $('#quiz-submit').on('click', function(){
+       var score = 0;
+      // Loop through each question
+    $('.question').each(function(){
+      // hide quiz msg
+      $('.quiz-msg', this).remove();
+      
+      // find correct option
+      var correct = $(this).find(':checked[data-correct]').length;
+      //console.log(correct);
+      
+      // check if correct or not
+      if( correct == 1){
+        // correct!
+        // add 1 point to the score
+        score++;
+        var msgHTML = '<div class="quiz-msg correct">Correct!</div>';
+        $(this).append(msgHTML);
+      }else{
+        // incorrect!
+        //alert("incorrect!");
+        var alrtHTML = '<div class="quiz-msg incorrect">Incorrect!</div>';
+        $(this).append(alrtHTML);
+      }
+      
+    });
+    
+    // Output score
+    $('#score').text(score);
+    
+    
+  });
+  
+}); // end document ready
+  </script>
+</body>
+</html>
