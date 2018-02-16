@@ -69,5 +69,112 @@
       He
     </label>
   </div>
+ 
+  <div class="question">
+    <p>5. Which chemical symbol is that of a compound?</p>
+    <label>
+      <input type="radio" name="answers[5]" value="A" data-correct>
+      NaCl
+    </label>
+    
+    <label>
+      <input type="radio" name="answers[5]" value="B">
+      (H2O)(KCN)
+    </label>
+    
+    <label>
+      <input type="radio" name="answers[5]" value="C">
+      Es
+    </label>
+  </div>
+  
+  <div class="question">
+    <p>6. Which checmical symbol is that of a mixture?</p>
+    <label>
+      <input type="radio" name="answers[6]" value="A">
+      H
+    </label>
+    
+    <label>
+      <input type="radio" name="answers[6]" value="B">
+      KCN
+    </label>
+    <label>
+      <input type="radio" name="answers[6]" value="C" data-correct>
+      (H2O)(NaCl)
+    </label>
+  </div>
+  <button id="quiz-submit">Submit</button>
+  
+  <div>
+    Score: <span id="score">0</span>
+  </div>
+  
+  <style>
+    body {
+    font-size: 18px;
+    font-family: sans-serif;
+  }
+  .question {
+    padding: 1em;
+    background: #eee;
+    margin-bottom: 1em;
+  }
+
+  .quiz-msg {
+    padding: 0.5em;
+    margin-top: 1em;
+  }
+  .quiz-msg.correct {
+     background: #e8ffc6;
+    }
+    .quiz-msg.incorrect {
+     background: #ffe5cc;
+    }
+
+    .correct {
+      background: green;
+      padding: 0.2em;
+    }
+  </style>
+  
+  <script> type= "text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+  $(document).ready(function(){
+    $('#quiz-submit').on('click', function(){
+       var score = 0;
+      // Loop through each question
+    $('.question').each(function(){
+      // hide quiz msg
+      $('.quiz-msg', this).remove();
+      
+      // find correct option
+      var correct = $(this).find(':checked[data-correct]').length;
+      //console.log(correct);
+      
+      // check if correct or not
+      if( correct == 1){
+        // correct!
+        // add 1 point to the score
+        score++;
+        var msgHTML = '<div class="quiz-msg correct">Correct!</div>';
+        $(this).append(msgHTML);
+      }else{
+        // incorrect!
+        //alert("incorrect!");
+        var alrtHTML = '<div class="quiz-msg incorrect">Incorrect!</div>';
+        $(this).append(alrtHTML);
+      }
+      
+    });
+    
+    // Output score
+    $('#score').text(score);
+    
+    
+  });
+  
+}); // end document ready
+  </script>
 </body>
 </html>
