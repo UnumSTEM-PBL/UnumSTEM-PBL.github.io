@@ -211,5 +211,137 @@
       It was a condition of a treaty he signed.
     </label>
   </div>
+  
+  <div class="question">
+    <p>10. On what day was the United Nations created?</p>
+    <label>
+      <input type="radio" name="answers[10]" value="A">
+      February 01, 1942
+    </label>
+    
+    <label>
+      <input type="radio" name="answers[10]" value="B">
+      March 13, 1942
+    </label>
+    
+    <label>
+      <input type="radio" name="answers[10]" value="C">
+      January 01, 1932
+    </label>
+    
+    <label>
+      <input type="radio" name="answers[10]" value="D" data-correct>
+      January 01, 1942
+    </label>
+  </div>
+  
+  <div class="question">
+    <p>11. What is decolonization?</p>
+    <label>
+      <input type="radio" name="answers[11]" value="A">
+      The action or process of setting and establishing control over the indigenous people of the area.
+    </label>
+    
+    <label>
+      <input type="radio" name="answers[11]" value="B">
+      The action of appropriating a place or domain for one's own use.
+    </label>
+    
+    <label>
+      <input type="radio" name="answers[11]" value="C" data-correct>
+      A process where one state transitions from being a colony to being independent.
+    </label>
+  </div>
+  
+  <div class="question">
+    <p>12. What casued the United States Departmet of Defense (USDD) to make a contingency plan against the Soviet Union?</p>
+    <label>
+      <input type="radio" name="answers[12]" value="A" data-correct>
+      The rising tension in Europe
+    </label>
+    
+    <label>
+      <input type="radio" name="answers[12]" value="B">
+      The rising tension in Germany
+    </label>
+    
+    <label>
+      <input type="radio" name="answers[12]" value="C">
+      The rising tension in Asia
+    </label>
+    
+    <label>
+      <input type="radio" name="answers[12]" value="D">
+      The rising tension in Africa
+    </label>
+  </div>
+  
+  <button id="quiz-submit">Submit</button>
+  
+  <div>
+    Score: <span id="score">0</span>
+  </div>
+  
+  <div class="citations"></div>
+  
+  <style>
+    h1 {
+      background: lightblue;
+      font-family: "Courier New";
+    }
+    body {
+      background: lightblue;
+      font-size: 18px;
+      font-family: "Courier New";
+    }
+    .question {
+      padding: 20px;
+      background: #9298ab;
+      margin-bottom: -10px;
+    }
+    .quiz-msg {
+      padding: 8px;
+      margin-top: 16px;
+    }
+    .quiz-msg.correct {
+      background: #66db79;
+    }
+    .quiz-msg.incorrect {
+      background: #bd3838;
+      padding: 3px;
+    }
+    .correct {
+      background: #66db79;
+      padding: 3px;
+    }
+  </style>
+  
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+    $('#quiz-submit').on('click', function(){
+       var score = 0;
+    $('.question').each(function(){
+      $('.quiz-msg', this).remove();
+      
+      var correct = $(this).find(':checked[data-correct]').length;
+      
+      if( correct == 1){
+        score++;
+        var msgHTML = '<div class="quiz-msg correct">Correct!</div>';
+        $(this).append(msgHTML);
+      }else{
+        var alrtHTML = '<div class="quiz-msg incorrect">Incorrect!</div>';
+        $(this).append(alrtHTML);
+      }
+      
+    });
+    
+      $('#score').text(score);
+    
+    
+    });
+  
+  </script>
 </body>
 </html>
