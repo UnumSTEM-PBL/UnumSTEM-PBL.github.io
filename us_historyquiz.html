@@ -322,7 +322,7 @@
     $('#quiz-submit').on('click', function(){
        var score = 0;
     $('.question').each(function(){
-      $('.quiz-msg', this).remove();
+      $('.quiz-msg', this).remove();  
       
       var correct = $(this).find(':checked[data-correct]').length;
       
