@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en_US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Simplifying and Graphing</title>
+</head>
+<body>
+  <div class="question">
+    <p>1. What is the simplified version of <i>3-rt(125x^9)</i>?</p>
+    <label>
+      <input type="radio" name="answers[1]" value="A">
+      3-rt(5^3 * x^9)
+    </label>
+    
+    <label>
+      <input type="radio" name="answers[1]" value="B" data-correct>
+      5x^3
+    </label>
+    
+    <label>
+      <input type="radio" name="answers[1]" value="C">
+      10 * 3-rt(3)
+    </label>
+    
+    <label>
+      <input type="radio" name="answers[1]" value="D">
+      3-rt(x^9)
+    </label>
+  </div>
+  
+  <div class="question">
+    <p>2. What is the simplified version of <i>(3-rt(64x^3))/8</i>?</p>
+    <label>
+      <input type="radio" name="answers[2]" value="A">
+      (sqrt(64x))/8
+    </label>
+    
+    <label>
+      <input type="radio" name="answers[2]" value="B">
+      4x
+    </label>
+    
+    <label>
+      <input type="radio" name="answers[2]" value="C">
+      3-rt(2^3 * x^3)
+    </label>
+    
+    <label>
+      <input type="radio" name="answers[2]" value="D" data-correct>
+      2x
+    </label>
+  </div>
+  
+  <div class="question">
+    <p>3. What is the value of <i>x</i> in <i>(sqrt(x^2 - 4x))^2 = (-4 + x)^2</i>?</p>
+    <label>
+      <input type="radio" name="answers[3]" value="A">
+      10
+    </label>
+    
+    <label>
+      <input type="radio" name="answers[3]" value="B">
+      1
+    </label>
+    
+    <label>
+      <input type="radio" name="answers[3]" value="C" data-correct>
+      4
+    </label>
+    
+    <label>
+      <input type="radio" name="answers[3]" value="D">
+      20
+    </label>
+  </div>
+  
+  <div class="question>
+    <p>4. What is the value of <i>x</i> in <i>sqrt(5x - 12) = 6</i>?</p>
+    <label>
+      <input type="radio" name="answers[4]" value="A" data-correct>
+      9.6
+    </label>
+    
+    <label>
+      <input type="radio" name="answers[4]" value="B">
+      42
+    </label>
+    
+    <label>
+      <input type="radio" name="answers[4]" value="C">
+      7
+    </label>
+    
+    <label>
+      <input type="radio" name="answers[4]" value="D">
+      33
+    </label>
+  </div>
+  
+  <div class="question">
+    <p>5. What is the value of <i>x</i> in <i>(sqrt(-5x - 12))^2 = -6 + x</i>?</p>
+    <label>
+      <input type="radio" name="answers[5]" value="A">
+      5
+    </label>
+    
+    <label>
+      <input type="radio" name="answers[5]" value="B">
+      2
+    </label>
+    
+    <label>
+      <input type="radio" name="answers[5]" value="C" data-correct>
+      -1
+    </label>
+    
+    <label>
+      <input type="radio" name="answers[5]" value="D">
+      1
+    </label>
+  </div>
+  
+  <div class="question">
+    <p>6. Which equation matches this graph?</p>
+    <img src="https://goo.gl/azAmFx" width="350" height="350">
+    <label>
+      <input type="radio" name="answers[6]" value="A" data-correct>
+      f(x) = 3 * sqrt(x - 10)
+    </label>
+    
+    <label>
+      <input type="radio" name="answers[6]" value="B">
+      f(x) = 2 * sqrt(x - 10)
+    </label>
+    
+    <label>
+      <input type="radio" name="answers[6]" value=C">
+      f(x) = x^2 + 7x - 2
+    </label>
+    
+    <label>
+      <input type="radio" name="answers[6]" value="D>
+      f(x) = 11 * sqrt(x - 1)
+    </label>
+  </div>
+  
+  <div class="question">
+    <p>7. Which equation matches this graph?</p>
+    <img src="https://goo.gl/m5UjqC" width="350" height="350">
+    <label>
+      <input type="radio" name="answers[7]" value="A">
+      f(x) = sqrt(x^2 + 2)
+    </label>
+    
+    <label>
+      <input type="radio" name="answers[7]" value="B">
+      f(x) = 3-rt(x + 12) - 7
+    </label>
+    
+    <label>
+      <input type="radio" name="answers[7]" value="C" data-correct>
+      f(x) = 2 * sqrt(x + 9) - 5
+    </label>
+    
+    <label>
+      <input type="radio" name="answers[7]" value="D">
+      f(x) = 2 * sqrt(x + 5) - 4
+    </label>
+  </div>
+  
+  <button id="quiz-submit">Submit</button>
+  
+  <div>
+    Score: <span id="score">0</span>
+  </div>
+  
+  <style>
+     h1 {
+      background: lightblue;
+      font-family: "Courier New";
+    }
+    body {
+    background: lightblue;
+    font-size: 18px;
+    font-family: "Courier New";
+   }
+.question {
+  padding: 20px;
+  background: #9298ab;
+  margin-bottom: -10px;
+}
+.quiz-msg {
+  padding: 8px;
+  margin-top: 16px;
+}
+.quiz-msg.correct {
+  background: #66db79;
+}
+.quiz-msg.incorrect {
+  background: #bd3838;
+  padding: 3px;
+}
+.correct {
+background: #66db79;
+padding: 3px;
+}
+  </style>
+  
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+     $(document).ready(function(){
+    $('#quiz-submit').on('click', function(){
+       var score = 0;
+    $('.question').each(function(){
+      $('.quiz-msg', this).remove();
+      
+      var correct = $(this).find(':checked[data-correct]').length;
+      
+      if( correct == 1){
+        score++;
+        var msgHTML = '<div class="quiz-msg correct">Correct!</div>';
+        $(this).append(msgHTML);
+      }else{
+        var alrtHTML = '<div class="quiz-msg incorrect">Incorrect!</div>';
+        $(this).append(alrtHTML);
+      }
+      
+    });
+    
+    $('#score').text(score);
+    
+    
+  });
+  
+}); 
+  </script>
+</body>
+</html>
